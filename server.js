@@ -1,21 +1,24 @@
 const express = require('express');
 const app = express();
-
+const hbs = require('hbs');
+require('./hbs/helpers');
 app.use(express.static(__dirname + '/public'));
 
+//Express HBS engine
+hbs.registerPartials(__dirname + '/Views/parciales')
+app.set('view engine', 'hbs');
 
-// app.get('/', (req, res) => {
-//     let salida = {
-//         nombre: 'dario',
-//         edad: 36,
-//         url: req.url
-//     };
-//     res.send(salida);
-// });
 
-// app.get('/data', (req, res) => {
-//     res.send("hola data");
-// });
+app.get('/', (req, res) => {
+
+    res.render('home', {
+        nombre: 'dario carazo merelo',
+    });
+});
+
+app.get('/about', (req, res) => {
+    res.render('about');
+});
 app.listen(3000, () => {
     console.log('Escuchando peticiones en el puerto 3000');
 });
