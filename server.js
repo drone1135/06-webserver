@@ -11,11 +11,11 @@ app.use(express.static(__dirname + '/public'));
 hbs.registerPartials(__dirname + '/Views/parciales')
 app.set('view engine', 'hbs');
 
-
 app.get('/', (req, res) => {
 
     res.render('home', {
         nombre: 'dario carazo merelo',
+
     });
 });
 
@@ -24,4 +24,8 @@ app.get('/about', (req, res) => {
 });
 app.listen(port, () => {
     console.log(`Escuchando peticiones en el puerto ${ port }`);
+});
+app.use(function(err, req, res, next) {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
 });
