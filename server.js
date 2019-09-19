@@ -12,8 +12,6 @@ hbs.registerPartials(__dirname + '/Views/parciales')
 app.set('view engine', 'hbs');
 
 app.get('/', (req, res) => {
-
-    //res.send('hola mundo');
     res.render('home', {
         nombre: 'dario carazo merelo',
 
