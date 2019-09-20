@@ -11,7 +11,7 @@ app.use(express.static(__dirname + '/public'));
 hbs.registerPartials(__dirname + '/Views/parciales')
 app.set('view engine', 'hbs');
 
-app.get('/', (req, res) => {
+app.get('/home', (req, res) => {
     res.render('home');
     //  nombre: 'dario carazo merelo',
 
