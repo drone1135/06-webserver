@@ -12,15 +12,17 @@ hbs.registerPartials(__dirname + '/Views/parciales')
 app.set('view engine', 'hbs');
 
 app.get('/', (req, res) => {
-    res.render('home', {
-        nombre: 'dario carazo merelo',
+    // res.render('home', {
+    //     nombre: 'dario carazo merelo',
 
-    });
+    // });
+    res.send('hola mundo');
+
 });
 
-app.get('/about', (req, res) => {
-    res.render('about');
-});
+// app.get('/about', (req, res) => {
+//     res.render('about');
+// });
 app.listen(port, () => {
     console.log(`Escuchando peticiones en el puerto ${ port }`);
 });
