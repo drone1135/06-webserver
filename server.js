@@ -18,8 +18,8 @@ app.set('view engine', 'hbs');
 
 app.get('/', (req, res) => {
 
-    res.render('/home', {
-        nombre: 'Darío Carazo'
+    res.render('home', {
+        nombre: 'fernando'
     });
 });
 
@@ -27,10 +27,7 @@ app.get('/about', (req, res) => {
 
     res.render('about');
 });
-app.get('/prueba', (req, res) => {
-    res.render('index-old.html');
-})
 
 app.listen(port, () => {
-    console.log(`Escuchando peticiones en el cuerpo ${ port }`);
+    console.log(`Escuchando peticiones en el puerto ${ port }`);
 });
