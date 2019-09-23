@@ -28,7 +28,7 @@ app.get('/about', (req, res) => {
     res.render('about');
 });
 app.get('/prueba', (req, res) => {
-    res.send('hola');
+    res.render('index-old.html');
 })
 
 app.listen(port, () => {
