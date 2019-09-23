@@ -16,7 +16,7 @@ app.set('view engine', 'hbs');
 
 
 
-app.get('/', (req, res) => {
+app.get('/views/', (req, res) => {
 
     res.render('home', {
         nombre: 'dario carazo merelo',
